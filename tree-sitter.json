@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "jinja2",
+      "camelcase": "Jinja2",
+      "title": "Jinja2",
+      "scope": "text.html.j2",
+      "file-types": [
+        "j2",
+        "html.j2"
+      ],
+      "injection-regex": "^jinja2$",
+      "class-name": "TreeSitterJinja2"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Embedded Jinja 2 templating parser.",
+    "authors": [
+      {
+        "name": "James Dagnall",
+        "email": "james.t.dagnall@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/JDaggers/tree-sitter-jinja2"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
