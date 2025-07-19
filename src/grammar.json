@@ -26,6 +26,22 @@
         ]
       }
     },
+    "jinja_statement_code": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[^%]+"
+          },
+          {
+            "type": "PATTERN",
+            "value": "%[^}]"
+          }
+        ]
+      }
+    },
     "jinja_statement": {
       "type": "SEQ",
       "members": [
@@ -34,26 +50,38 @@
           "value": "{%"
         },
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "[^%]+"
-              },
-              {
-                "type": "PATTERN",
-                "value": "%[^}]"
-              }
-            ]
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "jinja_statement_code"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
           "value": "%}"
         }
       ]
+    },
+    "jinja_expression_code": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[^}]+"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[}][^}]"
+          }
+        ]
+      }
     },
     "jinja_expression": {
       "type": "SEQ",
@@ -63,20 +91,16 @@
           "value": "{{"
         },
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "[^}]+"
-              },
-              {
-                "type": "PATTERN",
-                "value": "[}][^}]"
-              }
-            ]
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "jinja_expression_code"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -132,10 +156,6 @@
           ]
         }
       }
-    },
-    "_identifier": {
-      "type": "PATTERN",
-      "value": "[_\\p{XID_Start}][_\\p{XID_Continue}]*"
     }
   },
   "extras": [

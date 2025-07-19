@@ -18,14 +18,18 @@ module.exports = grammar({
       $.jinja_expression,
       $.jinja_comment,
     )),
-    jinja_statement: _ => seq(
+    // any series of characters that is not '%}'
+    jinja_statement_code: _ => repeat1(choice(/[^%]+/, /%[^}]/)), 
+    jinja_statement: $ => seq(
       "{%",
-      repeat(choice(/[^%]+/, /%[^}]/)), // any series of characters that is not '%}'
+      optional($.jinja_statement_code),
       "%}",
     ),
-    jinja_expression: _ => seq( // TODO: perhaps modify definition to only accept 'expressions' not series of characters
+    // any series of characters that is not '}}'
+    jinja_expression_code: _ => repeat1(choice(/[^}]+/, /[}][^}]/)), 
+    jinja_expression: $ => seq( 
       "{{",
-      repeat(choice(/[^}]+/, /[}][^}]/)), // any series of characters that is not '}}'
+      optional($.jinja_expression_code),
       "}}",
     ),
     jinja_comment: _ => seq(

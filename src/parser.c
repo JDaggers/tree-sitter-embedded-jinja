@@ -7,9 +7,9 @@
 #endif
 
 #define LANGUAGE_VERSION 15
-#define STATE_COUNT 22
+#define STATE_COUNT 24
 #define LARGE_STATE_COUNT 2
-#define SYMBOL_COUNT 25
+#define SYMBOL_COUNT 27
 #define ALIAS_COUNT 0
 #define TOKEN_COUNT 15
 #define EXTERNAL_TOKEN_COUNT 0
@@ -20,13 +20,13 @@
 #define SUPERTYPE_COUNT 0
 
 enum ts_symbol_identifiers {
-  anon_sym_LBRACE_PERCENT = 1,
-  aux_sym_jinja_statement_token1 = 2,
-  aux_sym_jinja_statement_token2 = 3,
+  aux_sym_jinja_statement_code_token1 = 1,
+  aux_sym_jinja_statement_code_token2 = 2,
+  anon_sym_LBRACE_PERCENT = 3,
   anon_sym_PERCENT_RBRACE = 4,
-  anon_sym_LBRACE_LBRACE = 5,
-  aux_sym_jinja_expression_token1 = 6,
-  aux_sym_jinja_expression_token2 = 7,
+  aux_sym_jinja_expression_code_token1 = 5,
+  aux_sym_jinja_expression_code_token2 = 6,
+  anon_sym_LBRACE_LBRACE = 7,
   anon_sym_RBRACE_RBRACE = 8,
   anon_sym_LBRACE_POUND = 9,
   aux_sym_jinja_comment_token1 = 10,
@@ -35,26 +35,28 @@ enum ts_symbol_identifiers {
   aux_sym_content_token1 = 13,
   aux_sym_content_token2 = 14,
   sym_source_file = 15,
-  sym_jinja_statement = 16,
-  sym_jinja_expression = 17,
-  sym_jinja_comment = 18,
-  sym_content = 19,
-  aux_sym_source_file_repeat1 = 20,
-  aux_sym_jinja_statement_repeat1 = 21,
-  aux_sym_jinja_expression_repeat1 = 22,
-  aux_sym_jinja_comment_repeat1 = 23,
-  aux_sym_content_repeat1 = 24,
+  sym_jinja_statement_code = 16,
+  sym_jinja_statement = 17,
+  sym_jinja_expression_code = 18,
+  sym_jinja_expression = 19,
+  sym_jinja_comment = 20,
+  sym_content = 21,
+  aux_sym_source_file_repeat1 = 22,
+  aux_sym_jinja_statement_code_repeat1 = 23,
+  aux_sym_jinja_expression_code_repeat1 = 24,
+  aux_sym_jinja_comment_repeat1 = 25,
+  aux_sym_content_repeat1 = 26,
 };
 
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
+  [aux_sym_jinja_statement_code_token1] = "jinja_statement_code_token1",
+  [aux_sym_jinja_statement_code_token2] = "jinja_statement_code_token2",
   [anon_sym_LBRACE_PERCENT] = "{%",
-  [aux_sym_jinja_statement_token1] = "jinja_statement_token1",
-  [aux_sym_jinja_statement_token2] = "jinja_statement_token2",
   [anon_sym_PERCENT_RBRACE] = "%}",
+  [aux_sym_jinja_expression_code_token1] = "jinja_expression_code_token1",
+  [aux_sym_jinja_expression_code_token2] = "jinja_expression_code_token2",
   [anon_sym_LBRACE_LBRACE] = "{{",
-  [aux_sym_jinja_expression_token1] = "jinja_expression_token1",
-  [aux_sym_jinja_expression_token2] = "jinja_expression_token2",
   [anon_sym_RBRACE_RBRACE] = "}}",
   [anon_sym_LBRACE_POUND] = "{#",
   [aux_sym_jinja_comment_token1] = "jinja_comment_token1",
@@ -63,26 +65,28 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_content_token1] = "content_token1",
   [aux_sym_content_token2] = "content_token2",
   [sym_source_file] = "source_file",
+  [sym_jinja_statement_code] = "jinja_statement_code",
   [sym_jinja_statement] = "jinja_statement",
+  [sym_jinja_expression_code] = "jinja_expression_code",
   [sym_jinja_expression] = "jinja_expression",
   [sym_jinja_comment] = "jinja_comment",
   [sym_content] = "content",
   [aux_sym_source_file_repeat1] = "source_file_repeat1",
-  [aux_sym_jinja_statement_repeat1] = "jinja_statement_repeat1",
-  [aux_sym_jinja_expression_repeat1] = "jinja_expression_repeat1",
+  [aux_sym_jinja_statement_code_repeat1] = "jinja_statement_code_repeat1",
+  [aux_sym_jinja_expression_code_repeat1] = "jinja_expression_code_repeat1",
   [aux_sym_jinja_comment_repeat1] = "jinja_comment_repeat1",
   [aux_sym_content_repeat1] = "content_repeat1",
 };
 
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
+  [aux_sym_jinja_statement_code_token1] = aux_sym_jinja_statement_code_token1,
+  [aux_sym_jinja_statement_code_token2] = aux_sym_jinja_statement_code_token2,
   [anon_sym_LBRACE_PERCENT] = anon_sym_LBRACE_PERCENT,
-  [aux_sym_jinja_statement_token1] = aux_sym_jinja_statement_token1,
-  [aux_sym_jinja_statement_token2] = aux_sym_jinja_statement_token2,
   [anon_sym_PERCENT_RBRACE] = anon_sym_PERCENT_RBRACE,
+  [aux_sym_jinja_expression_code_token1] = aux_sym_jinja_expression_code_token1,
+  [aux_sym_jinja_expression_code_token2] = aux_sym_jinja_expression_code_token2,
   [anon_sym_LBRACE_LBRACE] = anon_sym_LBRACE_LBRACE,
-  [aux_sym_jinja_expression_token1] = aux_sym_jinja_expression_token1,
-  [aux_sym_jinja_expression_token2] = aux_sym_jinja_expression_token2,
   [anon_sym_RBRACE_RBRACE] = anon_sym_RBRACE_RBRACE,
   [anon_sym_LBRACE_POUND] = anon_sym_LBRACE_POUND,
   [aux_sym_jinja_comment_token1] = aux_sym_jinja_comment_token1,
@@ -91,13 +95,15 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym_content_token1] = aux_sym_content_token1,
   [aux_sym_content_token2] = aux_sym_content_token2,
   [sym_source_file] = sym_source_file,
+  [sym_jinja_statement_code] = sym_jinja_statement_code,
   [sym_jinja_statement] = sym_jinja_statement,
+  [sym_jinja_expression_code] = sym_jinja_expression_code,
   [sym_jinja_expression] = sym_jinja_expression,
   [sym_jinja_comment] = sym_jinja_comment,
   [sym_content] = sym_content,
   [aux_sym_source_file_repeat1] = aux_sym_source_file_repeat1,
-  [aux_sym_jinja_statement_repeat1] = aux_sym_jinja_statement_repeat1,
-  [aux_sym_jinja_expression_repeat1] = aux_sym_jinja_expression_repeat1,
+  [aux_sym_jinja_statement_code_repeat1] = aux_sym_jinja_statement_code_repeat1,
+  [aux_sym_jinja_expression_code_repeat1] = aux_sym_jinja_expression_code_repeat1,
   [aux_sym_jinja_comment_repeat1] = aux_sym_jinja_comment_repeat1,
   [aux_sym_content_repeat1] = aux_sym_content_repeat1,
 };
@@ -107,32 +113,32 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = true,
   },
+  [aux_sym_jinja_statement_code_token1] = {
+    .visible = false,
+    .named = false,
+  },
+  [aux_sym_jinja_statement_code_token2] = {
+    .visible = false,
+    .named = false,
+  },
   [anon_sym_LBRACE_PERCENT] = {
     .visible = true,
-    .named = false,
-  },
-  [aux_sym_jinja_statement_token1] = {
-    .visible = false,
-    .named = false,
-  },
-  [aux_sym_jinja_statement_token2] = {
-    .visible = false,
     .named = false,
   },
   [anon_sym_PERCENT_RBRACE] = {
     .visible = true,
     .named = false,
   },
+  [aux_sym_jinja_expression_code_token1] = {
+    .visible = false,
+    .named = false,
+  },
+  [aux_sym_jinja_expression_code_token2] = {
+    .visible = false,
+    .named = false,
+  },
   [anon_sym_LBRACE_LBRACE] = {
     .visible = true,
-    .named = false,
-  },
-  [aux_sym_jinja_expression_token1] = {
-    .visible = false,
-    .named = false,
-  },
-  [aux_sym_jinja_expression_token2] = {
-    .visible = false,
     .named = false,
   },
   [anon_sym_RBRACE_RBRACE] = {
@@ -167,7 +173,15 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
+  [sym_jinja_statement_code] = {
+    .visible = true,
+    .named = true,
+  },
   [sym_jinja_statement] = {
+    .visible = true,
+    .named = true,
+  },
+  [sym_jinja_expression_code] = {
     .visible = true,
     .named = true,
   },
@@ -187,11 +201,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [aux_sym_jinja_statement_repeat1] = {
+  [aux_sym_jinja_statement_code_repeat1] = {
     .visible = false,
     .named = false,
   },
-  [aux_sym_jinja_expression_repeat1] = {
+  [aux_sym_jinja_expression_code_repeat1] = {
     .visible = false,
     .named = false,
   },
@@ -236,6 +250,8 @@ static const TSStateId ts_primary_state_ids[STATE_COUNT] = {
   [19] = 19,
   [20] = 20,
   [21] = 21,
+  [22] = 22,
+  [23] = 23,
 };
 
 static bool ts_lex(TSLexer *lexer, TSStateId state) {
@@ -259,15 +275,15 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 2:
       if (lookahead == '#') ADVANCE(20);
-      if (lookahead == '%') ADVANCE(10);
-      if (lookahead == '{') ADVANCE(15);
+      if (lookahead == '%') ADVANCE(13);
+      if (lookahead == '{') ADVANCE(18);
       if (lookahead != 0) ADVANCE(27);
       END_STATE();
     case 3:
       if (lookahead == '%') ADVANCE(5);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(11);
-      if (lookahead != 0) ADVANCE(12);
+          lookahead == ' ') ADVANCE(10);
+      if (lookahead != 0) ADVANCE(11);
       END_STATE();
     case 4:
       if (lookahead == '}') ADVANCE(24);
@@ -275,17 +291,17 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 5:
       if (lookahead == '}') ADVANCE(14);
-      if (lookahead != 0) ADVANCE(13);
+      if (lookahead != 0) ADVANCE(12);
       END_STATE();
     case 6:
       if (lookahead == '}') ADVANCE(19);
-      if (lookahead != 0) ADVANCE(18);
+      if (lookahead != 0) ADVANCE(17);
       END_STATE();
     case 7:
       if (lookahead == '}') ADVANCE(6);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(16);
-      if (lookahead != 0) ADVANCE(17);
+          lookahead == ' ') ADVANCE(15);
+      if (lookahead != 0) ADVANCE(16);
       END_STATE();
     case 8:
       if (eof) ADVANCE(9);
@@ -298,43 +314,43 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(ts_builtin_sym_end);
       END_STATE();
     case 10:
-      ACCEPT_TOKEN(anon_sym_LBRACE_PERCENT);
+      ACCEPT_TOKEN(aux_sym_jinja_statement_code_token1);
+      if (('\t' <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(10);
+      if (lookahead != 0 &&
+          lookahead != '%') ADVANCE(11);
       END_STATE();
     case 11:
-      ACCEPT_TOKEN(aux_sym_jinja_statement_token1);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(11);
+      ACCEPT_TOKEN(aux_sym_jinja_statement_code_token1);
       if (lookahead != 0 &&
-          lookahead != '%') ADVANCE(12);
+          lookahead != '%') ADVANCE(11);
       END_STATE();
     case 12:
-      ACCEPT_TOKEN(aux_sym_jinja_statement_token1);
-      if (lookahead != 0 &&
-          lookahead != '%') ADVANCE(12);
+      ACCEPT_TOKEN(aux_sym_jinja_statement_code_token2);
       END_STATE();
     case 13:
-      ACCEPT_TOKEN(aux_sym_jinja_statement_token2);
+      ACCEPT_TOKEN(anon_sym_LBRACE_PERCENT);
       END_STATE();
     case 14:
       ACCEPT_TOKEN(anon_sym_PERCENT_RBRACE);
       END_STATE();
     case 15:
-      ACCEPT_TOKEN(anon_sym_LBRACE_LBRACE);
+      ACCEPT_TOKEN(aux_sym_jinja_expression_code_token1);
+      if (('\t' <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(15);
+      if (lookahead != 0 &&
+          lookahead != '}') ADVANCE(16);
       END_STATE();
     case 16:
-      ACCEPT_TOKEN(aux_sym_jinja_expression_token1);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(16);
+      ACCEPT_TOKEN(aux_sym_jinja_expression_code_token1);
       if (lookahead != 0 &&
-          lookahead != '}') ADVANCE(17);
+          lookahead != '}') ADVANCE(16);
       END_STATE();
     case 17:
-      ACCEPT_TOKEN(aux_sym_jinja_expression_token1);
-      if (lookahead != 0 &&
-          lookahead != '}') ADVANCE(17);
+      ACCEPT_TOKEN(aux_sym_jinja_expression_code_token2);
       END_STATE();
     case 18:
-      ACCEPT_TOKEN(aux_sym_jinja_expression_token2);
+      ACCEPT_TOKEN(anon_sym_LBRACE_LBRACE);
       END_STATE();
     case 19:
       ACCEPT_TOKEN(anon_sym_RBRACE_RBRACE);
@@ -392,25 +408,27 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
   [10] = {.lex_state = 8},
   [11] = {.lex_state = 8},
   [12] = {.lex_state = 7},
-  [13] = {.lex_state = 1},
-  [14] = {.lex_state = 3},
+  [13] = {.lex_state = 3},
+  [14] = {.lex_state = 1},
   [15] = {.lex_state = 3},
-  [16] = {.lex_state = 7},
-  [17] = {.lex_state = 3},
-  [18] = {.lex_state = 1},
+  [16] = {.lex_state = 1},
+  [17] = {.lex_state = 7},
+  [18] = {.lex_state = 3},
   [19] = {.lex_state = 7},
   [20] = {.lex_state = 1},
   [21] = {.lex_state = 0},
+  [22] = {.lex_state = 0},
+  [23] = {.lex_state = 0},
 };
 
 static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(0)] = {
     [ts_builtin_sym_end] = ACTIONS(1),
+    [aux_sym_jinja_statement_code_token2] = ACTIONS(1),
     [anon_sym_LBRACE_PERCENT] = ACTIONS(1),
-    [aux_sym_jinja_statement_token2] = ACTIONS(1),
     [anon_sym_PERCENT_RBRACE] = ACTIONS(1),
+    [aux_sym_jinja_expression_code_token2] = ACTIONS(1),
     [anon_sym_LBRACE_LBRACE] = ACTIONS(1),
-    [aux_sym_jinja_expression_token2] = ACTIONS(1),
     [anon_sym_RBRACE_RBRACE] = ACTIONS(1),
     [anon_sym_LBRACE_POUND] = ACTIONS(1),
     [aux_sym_jinja_comment_token2] = ACTIONS(1),
@@ -557,79 +575,83 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LBRACE_LBRACE,
       anon_sym_LBRACE_POUND,
       aux_sym_content_token2,
-  [160] = 4,
+  [160] = 5,
     ACTIONS(76), 1,
-      aux_sym_jinja_expression_token1,
+      aux_sym_jinja_expression_code_token1,
     ACTIONS(78), 1,
-      aux_sym_jinja_expression_token2,
+      aux_sym_jinja_expression_code_token2,
     ACTIONS(80), 1,
       anon_sym_RBRACE_RBRACE,
-    STATE(16), 1,
-      aux_sym_jinja_expression_repeat1,
-  [173] = 4,
+    STATE(17), 1,
+      aux_sym_jinja_expression_code_repeat1,
+    STATE(23), 1,
+      sym_jinja_expression_code,
+  [176] = 5,
     ACTIONS(82), 1,
-      aux_sym_jinja_comment_token1,
+      aux_sym_jinja_statement_code_token1,
     ACTIONS(84), 1,
-      aux_sym_jinja_comment_token2,
+      aux_sym_jinja_statement_code_token2,
     ACTIONS(86), 1,
-      anon_sym_POUND_RBRACE,
-    STATE(18), 1,
-      aux_sym_jinja_comment_repeat1,
-  [186] = 4,
-    ACTIONS(88), 1,
-      aux_sym_jinja_statement_token1,
-    ACTIONS(90), 1,
-      aux_sym_jinja_statement_token2,
-    ACTIONS(92), 1,
       anon_sym_PERCENT_RBRACE,
     STATE(15), 1,
-      aux_sym_jinja_statement_repeat1,
-  [199] = 4,
+      aux_sym_jinja_statement_code_repeat1,
+    STATE(22), 1,
+      sym_jinja_statement_code,
+  [192] = 4,
+    ACTIONS(88), 1,
+      aux_sym_jinja_comment_token1,
+    ACTIONS(90), 1,
+      aux_sym_jinja_comment_token2,
+    ACTIONS(92), 1,
+      anon_sym_POUND_RBRACE,
+    STATE(16), 1,
+      aux_sym_jinja_comment_repeat1,
+  [205] = 4,
     ACTIONS(94), 1,
-      aux_sym_jinja_statement_token1,
+      aux_sym_jinja_statement_code_token1,
     ACTIONS(96), 1,
-      aux_sym_jinja_statement_token2,
+      aux_sym_jinja_statement_code_token2,
     ACTIONS(98), 1,
       anon_sym_PERCENT_RBRACE,
-    STATE(17), 1,
-      aux_sym_jinja_statement_repeat1,
-  [212] = 4,
+    STATE(18), 1,
+      aux_sym_jinja_statement_code_repeat1,
+  [218] = 4,
     ACTIONS(100), 1,
-      aux_sym_jinja_expression_token1,
-    ACTIONS(102), 1,
-      aux_sym_jinja_expression_token2,
-    ACTIONS(104), 1,
-      anon_sym_RBRACE_RBRACE,
-    STATE(19), 1,
-      aux_sym_jinja_expression_repeat1,
-  [225] = 4,
-    ACTIONS(106), 1,
-      aux_sym_jinja_statement_token1,
-    ACTIONS(109), 1,
-      aux_sym_jinja_statement_token2,
-    ACTIONS(112), 1,
-      anon_sym_PERCENT_RBRACE,
-    STATE(17), 1,
-      aux_sym_jinja_statement_repeat1,
-  [238] = 4,
-    ACTIONS(114), 1,
       aux_sym_jinja_comment_token1,
-    ACTIONS(116), 1,
+    ACTIONS(102), 1,
       aux_sym_jinja_comment_token2,
-    ACTIONS(118), 1,
+    ACTIONS(104), 1,
       anon_sym_POUND_RBRACE,
     STATE(20), 1,
       aux_sym_jinja_comment_repeat1,
-  [251] = 4,
+  [231] = 4,
+    ACTIONS(106), 1,
+      aux_sym_jinja_expression_code_token1,
+    ACTIONS(108), 1,
+      aux_sym_jinja_expression_code_token2,
+    ACTIONS(110), 1,
+      anon_sym_RBRACE_RBRACE,
+    STATE(19), 1,
+      aux_sym_jinja_expression_code_repeat1,
+  [244] = 4,
+    ACTIONS(112), 1,
+      aux_sym_jinja_statement_code_token1,
+    ACTIONS(115), 1,
+      aux_sym_jinja_statement_code_token2,
+    ACTIONS(118), 1,
+      anon_sym_PERCENT_RBRACE,
+    STATE(18), 1,
+      aux_sym_jinja_statement_code_repeat1,
+  [257] = 4,
     ACTIONS(120), 1,
-      aux_sym_jinja_expression_token1,
+      aux_sym_jinja_expression_code_token1,
     ACTIONS(123), 1,
-      aux_sym_jinja_expression_token2,
+      aux_sym_jinja_expression_code_token2,
     ACTIONS(126), 1,
       anon_sym_RBRACE_RBRACE,
     STATE(19), 1,
-      aux_sym_jinja_expression_repeat1,
-  [264] = 4,
+      aux_sym_jinja_expression_code_repeat1,
+  [270] = 4,
     ACTIONS(128), 1,
       aux_sym_jinja_comment_token1,
     ACTIONS(131), 1,
@@ -638,9 +660,15 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_POUND_RBRACE,
     STATE(20), 1,
       aux_sym_jinja_comment_repeat1,
-  [277] = 1,
+  [283] = 1,
     ACTIONS(136), 1,
       ts_builtin_sym_end,
+  [287] = 1,
+    ACTIONS(138), 1,
+      anon_sym_PERCENT_RBRACE,
+  [291] = 1,
+    ACTIONS(140), 1,
+      anon_sym_RBRACE_RBRACE,
 };
 
 static const uint32_t ts_small_parse_table_map[] = {
@@ -655,31 +683,33 @@ static const uint32_t ts_small_parse_table_map[] = {
   [SMALL_STATE(10)] = 138,
   [SMALL_STATE(11)] = 149,
   [SMALL_STATE(12)] = 160,
-  [SMALL_STATE(13)] = 173,
-  [SMALL_STATE(14)] = 186,
-  [SMALL_STATE(15)] = 199,
-  [SMALL_STATE(16)] = 212,
-  [SMALL_STATE(17)] = 225,
-  [SMALL_STATE(18)] = 238,
-  [SMALL_STATE(19)] = 251,
-  [SMALL_STATE(20)] = 264,
-  [SMALL_STATE(21)] = 277,
+  [SMALL_STATE(13)] = 176,
+  [SMALL_STATE(14)] = 192,
+  [SMALL_STATE(15)] = 205,
+  [SMALL_STATE(16)] = 218,
+  [SMALL_STATE(17)] = 231,
+  [SMALL_STATE(18)] = 244,
+  [SMALL_STATE(19)] = 257,
+  [SMALL_STATE(20)] = 270,
+  [SMALL_STATE(21)] = 283,
+  [SMALL_STATE(22)] = 287,
+  [SMALL_STATE(23)] = 291,
 };
 
 static const TSParseActionEntry ts_parse_actions[] = {
   [0] = {.entry = {.count = 0, .reusable = false}},
   [1] = {.entry = {.count = 1, .reusable = false}}, RECOVER(),
   [3] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_source_file, 0, 0, 0),
-  [5] = {.entry = {.count = 1, .reusable = false}}, SHIFT(14),
+  [5] = {.entry = {.count = 1, .reusable = false}}, SHIFT(13),
   [7] = {.entry = {.count = 1, .reusable = false}}, SHIFT(12),
-  [9] = {.entry = {.count = 1, .reusable = false}}, SHIFT(13),
+  [9] = {.entry = {.count = 1, .reusable = false}}, SHIFT(14),
   [11] = {.entry = {.count = 1, .reusable = true}}, SHIFT(4),
   [13] = {.entry = {.count = 1, .reusable = false}}, SHIFT(4),
   [15] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_source_file, 1, 0, 0),
   [17] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0),
-  [19] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(14),
+  [19] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(13),
   [22] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(12),
-  [25] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(13),
+  [25] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(14),
   [28] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(4),
   [31] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_source_file_repeat1, 2, 0, 0), SHIFT_REPEAT(4),
   [34] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_content, 1, 0, 0),
@@ -694,42 +724,44 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [54] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_statement, 2, 0, 0),
   [56] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_expression, 2, 0, 0),
   [58] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_expression, 2, 0, 0),
-  [60] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_comment, 2, 0, 0),
-  [62] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_comment, 2, 0, 0),
-  [64] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_expression, 3, 0, 0),
-  [66] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_expression, 3, 0, 0),
-  [68] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_statement, 3, 0, 0),
-  [70] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_statement, 3, 0, 0),
+  [60] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_expression, 3, 0, 0),
+  [62] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_expression, 3, 0, 0),
+  [64] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_statement, 3, 0, 0),
+  [66] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_statement, 3, 0, 0),
+  [68] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_comment, 2, 0, 0),
+  [70] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_comment, 2, 0, 0),
   [72] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_jinja_comment, 3, 0, 0),
   [74] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_comment, 3, 0, 0),
-  [76] = {.entry = {.count = 1, .reusable = true}}, SHIFT(16),
-  [78] = {.entry = {.count = 1, .reusable = false}}, SHIFT(16),
+  [76] = {.entry = {.count = 1, .reusable = true}}, SHIFT(17),
+  [78] = {.entry = {.count = 1, .reusable = false}}, SHIFT(17),
   [80] = {.entry = {.count = 1, .reusable = false}}, SHIFT(7),
-  [82] = {.entry = {.count = 1, .reusable = true}}, SHIFT(18),
-  [84] = {.entry = {.count = 1, .reusable = false}}, SHIFT(18),
-  [86] = {.entry = {.count = 1, .reusable = false}}, SHIFT(8),
-  [88] = {.entry = {.count = 1, .reusable = true}}, SHIFT(15),
-  [90] = {.entry = {.count = 1, .reusable = false}}, SHIFT(15),
-  [92] = {.entry = {.count = 1, .reusable = false}}, SHIFT(6),
-  [94] = {.entry = {.count = 1, .reusable = true}}, SHIFT(17),
-  [96] = {.entry = {.count = 1, .reusable = false}}, SHIFT(17),
-  [98] = {.entry = {.count = 1, .reusable = false}}, SHIFT(10),
-  [100] = {.entry = {.count = 1, .reusable = true}}, SHIFT(19),
-  [102] = {.entry = {.count = 1, .reusable = false}}, SHIFT(19),
-  [104] = {.entry = {.count = 1, .reusable = false}}, SHIFT(9),
-  [106] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_jinja_statement_repeat1, 2, 0, 0), SHIFT_REPEAT(17),
-  [109] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_jinja_statement_repeat1, 2, 0, 0), SHIFT_REPEAT(17),
-  [112] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_jinja_statement_repeat1, 2, 0, 0),
-  [114] = {.entry = {.count = 1, .reusable = true}}, SHIFT(20),
-  [116] = {.entry = {.count = 1, .reusable = false}}, SHIFT(20),
-  [118] = {.entry = {.count = 1, .reusable = false}}, SHIFT(11),
-  [120] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_jinja_expression_repeat1, 2, 0, 0), SHIFT_REPEAT(19),
-  [123] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_jinja_expression_repeat1, 2, 0, 0), SHIFT_REPEAT(19),
-  [126] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_jinja_expression_repeat1, 2, 0, 0),
+  [82] = {.entry = {.count = 1, .reusable = true}}, SHIFT(15),
+  [84] = {.entry = {.count = 1, .reusable = false}}, SHIFT(15),
+  [86] = {.entry = {.count = 1, .reusable = false}}, SHIFT(6),
+  [88] = {.entry = {.count = 1, .reusable = true}}, SHIFT(16),
+  [90] = {.entry = {.count = 1, .reusable = false}}, SHIFT(16),
+  [92] = {.entry = {.count = 1, .reusable = false}}, SHIFT(10),
+  [94] = {.entry = {.count = 1, .reusable = true}}, SHIFT(18),
+  [96] = {.entry = {.count = 1, .reusable = false}}, SHIFT(18),
+  [98] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_statement_code, 1, 0, 0),
+  [100] = {.entry = {.count = 1, .reusable = true}}, SHIFT(20),
+  [102] = {.entry = {.count = 1, .reusable = false}}, SHIFT(20),
+  [104] = {.entry = {.count = 1, .reusable = false}}, SHIFT(11),
+  [106] = {.entry = {.count = 1, .reusable = true}}, SHIFT(19),
+  [108] = {.entry = {.count = 1, .reusable = false}}, SHIFT(19),
+  [110] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_jinja_expression_code, 1, 0, 0),
+  [112] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_jinja_statement_code_repeat1, 2, 0, 0), SHIFT_REPEAT(18),
+  [115] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_jinja_statement_code_repeat1, 2, 0, 0), SHIFT_REPEAT(18),
+  [118] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_jinja_statement_code_repeat1, 2, 0, 0),
+  [120] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_jinja_expression_code_repeat1, 2, 0, 0), SHIFT_REPEAT(19),
+  [123] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_jinja_expression_code_repeat1, 2, 0, 0), SHIFT_REPEAT(19),
+  [126] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_jinja_expression_code_repeat1, 2, 0, 0),
   [128] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_jinja_comment_repeat1, 2, 0, 0), SHIFT_REPEAT(20),
   [131] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_jinja_comment_repeat1, 2, 0, 0), SHIFT_REPEAT(20),
   [134] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_jinja_comment_repeat1, 2, 0, 0),
   [136] = {.entry = {.count = 1, .reusable = true}},  ACCEPT_INPUT(),
+  [138] = {.entry = {.count = 1, .reusable = true}}, SHIFT(9),
+  [140] = {.entry = {.count = 1, .reusable = true}}, SHIFT(8),
 };
 
 #ifdef __cplusplus

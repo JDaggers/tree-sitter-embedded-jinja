@@ -12,9 +12,9 @@ statement
 
 (source_file
   (content)
-  (jinja_statement)
+  (jinja_statement (jinja_statement_code))
   (content)
-  (jinja_statement)
+  (jinja_statement (jinja_statement_code))
   (content)
 )
 
@@ -31,7 +31,7 @@ expression
 
 (source_file
   (content)
-  (jinja_expression)
+  (jinja_expression (jinja_expression_code))
   (content)
 )
 
@@ -74,11 +74,76 @@ content
   (content)
   (jinja_comment)
   (content)
-  (jinja_expression)
+  (jinja_expression (jinja_expression_code))
   (content)
-  (jinja_statement)
+  (jinja_statement (jinja_statement_code))
   (content)
-  (jinja_statement)
+  (jinja_statement (jinja_statement_code))
   (content)
 )
 
+==================
+multi-line statement
+==================
+
+<html>
+    {% for foo in bar 
+        if foobar %}
+        <li>item { wow } % {</li>
+    {% endfor %}
+</html>
+
+---
+
+(source_file
+  (content)
+  (jinja_statement (jinja_statement_code))
+  (content)
+  (jinja_statement (jinja_statement_code))
+  (content)
+)
+
+==================
+multi-line expression
+==================
+
+<html>
+    {{ 
+        test_var + 
+        other_test_var 
+    }}
+    random test text { wow } } }{
+</html>
+
+---
+
+(source_file
+  (content)
+  (jinja_expression (jinja_expression_code))
+  (content)
+)
+
+==================
+multi-line comment
+==================
+
+<html>
+    {# test comment 
+    <body>
+        {{ test_expression }}
+        <div>
+            {% for foo in bar %}
+                <li>item</li>
+            {% endfor %}
+        <div>
+    </body>
+    #}
+</html>
+
+---
+
+(source_file
+  (content)
+  (jinja_comment)
+  (content)
+)

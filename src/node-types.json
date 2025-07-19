@@ -12,10 +12,40 @@
   {
     "type": "jinja_expression",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "jinja_expression_code",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "jinja_expression_code",
+    "named": true,
     "fields": {}
   },
   {
     "type": "jinja_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "jinja_statement_code",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "jinja_statement_code",
     "named": true,
     "fields": {}
   },
