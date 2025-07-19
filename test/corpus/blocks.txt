@@ -1,0 +1,84 @@
+==================
+statement
+==================
+
+<html>
+    {% for foo in bar %}
+        <li>item { wow } % {</li>
+    {% endfor %}
+</html>
+
+---
+
+(source_file
+  (content)
+  (jinja_statement)
+  (content)
+  (jinja_statement)
+  (content)
+)
+
+==================
+expression
+==================
+
+<html>
+    {{ test_var + other_test_var }}
+    random test text { wow } } }{
+</html>
+
+---
+
+(source_file
+  (content)
+  (jinja_expression)
+  (content)
+)
+
+==================
+comment
+==================
+
+<html>
+    {# test comment #}
+    random test text  { wow } }  { #{
+</html>
+
+---
+
+(source_file
+  (content)
+  (jinja_comment)
+  (content)
+)
+
+==================
+content
+==================
+
+<html>
+    {# test comment #}
+    <body>
+        {{ test_expression }}
+        <div>
+            {% for foo in bar %}
+                <li>item</li>
+            {% endfor %}
+        <div>
+    </body>
+</html>
+
+---
+
+(source_file
+  (content)
+  (jinja_comment)
+  (content)
+  (jinja_expression)
+  (content)
+  (jinja_statement)
+  (content)
+  (jinja_statement)
+  (content)
+)
+

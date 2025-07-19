@@ -5,13 +5,15 @@
       "name": "jinja2",
       "camelcase": "Jinja2",
       "title": "Jinja2",
-      "scope": "text.html.j2",
+      "scope": "text.html.jinja2",
       "file-types": [
         "j2",
         "html.j2"
       ],
-      "injection-regex": "^jinja2$",
-      "class-name": "TreeSitterJinja2"
+      "injection-regex": "j2",
+      "class-name": "TreeSitterJinja2",
+      "injections": "./queries/injections.scm",
+      "highlights": "./queries/highlights.scm"
     }
   ],
   "metadata": {

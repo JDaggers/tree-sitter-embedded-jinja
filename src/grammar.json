@@ -1,0 +1,153 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "jinja2",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "content"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "jinja_statement"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "jinja_expression"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "jinja_comment"
+          }
+        ]
+      }
+    },
+    "jinja_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{%"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^%]+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "%[^}]"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "%}"
+        }
+      ]
+    },
+    "jinja_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^}]+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[}][^}]"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}}"
+        }
+      ]
+    },
+    "jinja_comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{#"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^#]+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "#[^}]"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "#}"
+        }
+      ]
+    },
+    "content": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^{]"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[{][^#%{]"
+            }
+          ]
+        }
+      }
+    },
+    "_identifier": {
+      "type": "PATTERN",
+      "value": "[_\\p{XID_Start}][_\\p{XID_Continue}]*"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}
